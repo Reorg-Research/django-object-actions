@@ -9,7 +9,7 @@
            {{ k }}="{{ v }}"
          {% endfor %}
          class="{{ tool.standard_attrs.class }}">
-      {{ tool.label|capfirst }}
+      {{ tool.label|safe|capfirst }}
       </a>
     </li>
   {% endfor %}
