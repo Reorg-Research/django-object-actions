@@ -4,7 +4,7 @@ from functools import wraps
 
 from django.conf.urls import url
 from django.contrib import messages
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.db.models.query import QuerySet
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.views.generic import View
