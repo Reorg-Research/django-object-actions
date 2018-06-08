@@ -1,6 +1,5 @@
-import sys
-
 from __future__ import unicode_literals
+import sys
 
 from functools import wraps
 
