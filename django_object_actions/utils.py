@@ -1,10 +1,16 @@
+import sys
+
 from __future__ import unicode_literals
 
 from functools import wraps
 
+if sys.version_info > (3, 0):
+    from django.urls import reverse
+else:
+    from django.core.urlresolvers import reverse
+
 from django.conf.urls import url
 from django.contrib import messages
-from django.urls import reverse
 from django.db.models.query import QuerySet
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.views.generic import View
