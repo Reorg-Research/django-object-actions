@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 from functools import wraps
 
-if sys.version_info > (3, 0):
+if sys.version_info > (2, 7):
     from django.urls import reverse
 else:
     from django.core.urlresolvers import reverse
