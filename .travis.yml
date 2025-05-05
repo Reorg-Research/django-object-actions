@@ -14,9 +14,11 @@ env:
   - TOX_ENV=django18-py34
   - TOX_ENV=django19-py27
   - TOX_ENV=django19-py34
-  # pending full travisci support for python 3.5
-  # - TOX_ENV=django18-py35
-  - TOX_ENV=coveralls-django18-py27
+  - TOX_ENV=django40-py38
+  - TOX_ENV=django40-py39
+  - TOX_ENV=django40-py310
+  - TOX_ENV=django40-py311
+  - TOX_ENV=coveralls-django40-py311
 install: pip install tox coveralls
 script: tox -e $TOX_ENV
 after_success: coveralls
