@@ -38,7 +38,7 @@ SECRET_KEY = 'lolimasekrit'
 ROOT_URLCONF = 'example_project.urls'
 
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -64,10 +64,3 @@ INSTALLED_APPS = (
     # dev helpers
     'django_extensions',
 )
-
-
-# STFU, Django 1.7
-# To be deleted once Django 1.8 testing begins
-SILENCED_SYSTEM_CHECKS = [
-    '1_7.W001',
-]

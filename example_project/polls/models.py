@@ -2,7 +2,7 @@ import datetime
 
 from django.db import models
 from django.utils import timezone
-from django_extensions.db.fields import UUIDField
+from django.db.models import UUIDField
 
 
 class Poll(models.Model):

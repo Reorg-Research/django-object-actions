@@ -3,10 +3,7 @@ import sys
 
 from functools import wraps
 
-if sys.version_info > (2, 7):
-    from django.urls import reverse
-else:
-    from django.core.urlresolvers import reverse
+from django.urls import reverse
 
 from django.conf.urls import url
 from django.contrib import messages

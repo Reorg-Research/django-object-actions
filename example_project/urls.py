@@ -1,26 +1,16 @@
 from django.conf import settings
-from django.conf.urls import patterns, include, url
+from django.urls import path
 
 from django.contrib import admin
-admin.autodiscover()
 
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'example_project.views.home', name='home'),
-    # url(r'^example_project/', include('example_project.foo.urls')),
+from django.views.static import serve
 
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    url(r'^admin/', include(admin.site.urls)),
-)
-
+urlpatterns = [
+    path('admin/', admin.site.urls),
+]
 
 # serve media
 if settings.DEBUG:
-    urlpatterns += patterns('',
-        url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
-            'document_root': settings.MEDIA_ROOT,
-        }),
-   )
+    urlpatterns += [
+        path('media/<path:path>/', serve, {'document_root': settings.MEDIA_ROOT}),
+    ]
